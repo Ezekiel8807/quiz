@@ -1,0 +1,36 @@
+{% extends "layout.html"%}
+
+
+{% block title %}
+    Quiz: Add quiz page
+{% endblock %} 
+
+{% block headTitle %}
+    add quiz
+{% endblock %} 
+
+
+
+
+{% block content %}  
+    <div class="container m-5 p-3 bg-light mx-auto">
+        <form action="createquiz/" method="post">
+            {% csrf_token %}
+            <label class="form-label" for="question"> Question: </label>
+            <textarea class="form-control" type="text" name="question" id="question" placeholder="Enter your question here..."></textarea>
+
+            <label class="form-label" for="">Options: </label>
+            <input class="form-control" type="text" name="option1" id="option1" placeholder="Enter option 1">
+            <input class="form-control" type="text" name="option2" id="option2" placeholder="Enter option 2">
+            <input class="form-control" type="text" name="option3" id="option3" placeholder="Enter option 3">
+            <input class="form-control" type="text" name="option4" id="option4" placeholder="Enter option 4">
+
+            <label class="form-label" for="answer">Answer: </label>
+            <input class="form-control" type="text" name="answer" id="answer" placeholder="Enter the correct Answer">
+
+            <div class="d-flex justify-content-end my-3">
+                <button class="btn btn-primary" type="submit"> Submit </button>
+            </div>
+        </form>
+    </div>
+{% endblock %} 

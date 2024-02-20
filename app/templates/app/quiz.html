@@ -1,0 +1,62 @@
+{% extends 'layout.html' %}
+
+
+{% block title %}
+    Quiz: quiz page
+{% endblock %}
+
+{% block headTitle %}
+    Start Quiz
+{% endblock %} 
+
+
+
+{% block content %}
+    <div class="container">  
+        <div class="container  mt-3">
+
+            <form action="submitquiz/" method="get">
+
+                {% for quiz in allQuiz %}
+                    <div class="my-3">
+                        <h3 class="h3">{{quiz.question}}</h3>
+
+                        
+                        <div class="form-check my-2">
+                            <input class="form-check-input" type="radio" name="{{quiz.id}}" id="{{quiz.option1}}" value="{{quiz.option1}}">
+                            <label class="form-check-label" for="{{quiz.option1}}">
+                                {{quiz.option1}}
+                            </label>
+                        </div>
+
+                        <div class="form-check my-2">
+                            <input class="form-check-input" type="radio" name="{{quiz.id}}" id="{{quiz.option2}}" value="{{quiz.option2}}">
+                            <label class="form-check-label" for="{{quiz.option2}}">
+                                {{quiz.option2}}
+                            </label>
+                        </div>
+
+                        <div class="form-check my-2">
+                            <input class="form-check-input" type="radio" name="{{quiz.id}}" id="{{quiz.option3}}" value="{{quiz.option3}}">
+                            <label class="form-check-label" for="{{quiz.option3}}">
+                                {{quiz.option3}}
+                            </label>
+                        </div>
+
+                        <div class="form-check my-2">
+                            <input class="form-check-input" type="radio" name="{{quiz.id}}" id="{{quiz.option4}}" value="{{quiz.option4}}">
+                            <label class="form-check-label" for="{{quiz.option4}}">
+                                {{quiz.option4}}
+                            </label>
+                        </div>
+                    </div>
+                {% endfor %}
+
+                <div class="d-flex justify-content-end">
+                    <button class="btn btn-success btn-lg" type="submit">Finished</button>
+                </div>
+            </form>
+        </div>
+        
+    </div>
+{% endblock %}

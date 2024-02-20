@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+
+
+{% block title %}
+    Home: Quiz landing page
+{% endblock %} 
+
+
+{% block headTitle %}
+    Quiz App
+{% endblock %} 
+
+
+
+{% block content %}  
+    <div class="row justify-content-center">
+        <div class="container col-8 m-5 p-5">
+            <p class="display-4 h4 fw-bold text-center">Click on the button below to start your Quiz</p>
+
+            <div class="d-flex justify-content-center p-3">
+                <a href="quiz/" class="btn btn-primary btn-lg px-5 mx-3">Start</a>
+                <a href="addquiz/" class="btn btn-primary btn-lg px-5 mx-3">Add quiz</a>
+            </div>
+        </div>
+    </div>
+{% endblock %} 
